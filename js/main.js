@@ -1,8 +1,10 @@
 const mainHTML = document.getElementById("main");
 let mainHTMLColor = mainHTML.style.backgroundColor;
 
+//NO USAR LOS DOS EVENTOS A LA VEZ
+
 //Evento cambio de fondo al hacer click en el fondo
-mainHTML.addEventListener("click", changeColor);
+//mainHTML.addEventListener("click", changeColor);
 
 //Crear un botón
 const newButtonMain = document.createElement("button");
