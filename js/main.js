@@ -29,3 +29,39 @@ function changeColor() {
   mainHTML.setAttribute("style", `background-color: ${newColor};`);
   mainHTMLColor = newColor;
 }
+
+let numItemsCarrito = document.getElementById("numItemsCarrito");
+let btnCarrito = document.getElementById("btnCarrito");
+
+let texto = `Carrito:`;
+btnCarrito.innerHTML = `${texto} 0`;
+
+numItemsCarrito.addEventListener("input", function () {
+  let totalInput = numItemsCarrito.value;
+  let total = parseInt(totalInput);
+  if (!total) {
+    totalInput = 0;
+    total = 0;
+    cambioTextoCarrito(totalInput);
+  }
+  if (totalInput < 0) {
+    totalInput = 0;
+    total = 0;
+    cambioTextoCarrito(totalInput);
+  } else if (totalInput > 10) {
+    totalInput = 10;
+    total = 10;
+    cambioTextoCarrito(totalInput);
+  }
+
+  cambioTextoCarrito(totalInput);
+});
+
+function cambioTextoCarrito(totalInput = 0) {
+  btnCarrito.innerHTML = `${texto} ${totalInput}`;
+}
+
+
+// IMPORTAR FUNCIONES DE OTROS ARCHIVOS
+import { test } from './funciones.js';
+test();
